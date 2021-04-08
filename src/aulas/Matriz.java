@@ -2,7 +2,7 @@ package aulas;
 
 import java.util.Scanner;
 
-public class Matrix {
+public class Matriz {
 
 	public static void main(String[] args) {
 		
