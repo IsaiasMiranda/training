@@ -26,12 +26,12 @@ public class ProgramFive {
 			System.out.println("Employee #: " + (i + 1));
 			System.out.print("Id: ");
 			Integer id = e.nextInt();
-
+/*
 			while (hasId(employee, id)) {
 				System.out.print("Existing code, try again ...");
 				id = e.nextInt();
 			}
-
+*/
 			e.nextLine();
 			System.out.print("Name: ");
 			String name = e.nextLine();
@@ -72,10 +72,10 @@ public class ProgramFive {
 		}
 		return null;
 	}
-
+/*
 	public static boolean hasId(List<Employee> employee, int id) {
 		Employee emp = employee.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
 		return emp != null;
-	}
+	}*/
 
 }
