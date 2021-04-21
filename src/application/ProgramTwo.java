@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Account;
+import entities.Account1;
 
 public class ProgramTwo {
 
@@ -13,7 +13,7 @@ public class ProgramTwo {
 
 		Scanner e = new Scanner(System.in);
 
-		Account account;
+		Account1 account;
 
 		System.out.print("Enter account number: ");
 		int accountNumber = e.nextInt();
@@ -27,9 +27,9 @@ public class ProgramTwo {
 
 		if (response == 'y') {
 			System.out.print("Enter the deposit amount : $ ");
-			account = new Account(accountNumber, holder, e.nextDouble());
+			account = new Account1(accountNumber, holder, e.nextDouble());
 		} else {
-			account = new Account(accountNumber, holder);
+			account = new Account1(accountNumber, holder);
 		}
 
 		System.out.println();

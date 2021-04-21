@@ -1,50 +1,70 @@
 package entities;
 
+import entities.exceptions.BusinessException;
+
 public class Account {
 
-	private int accountNumber;
-	private String name;
-	private double balance;
+	private Integer number;
+	private String holder;
+	private Double balance;
+	private Double withdrawalLimit;
 
-	public Account(int accountNumber, String name) {
-		this.accountNumber = accountNumber;
-		this.name = name;
+	public Account() {
+
 	}
 
-	public Account(int accountNumber, String name, double initialDeposit) {
-		this.accountNumber = accountNumber;
-		this.name = name;
-		deposit(initialDeposit);
+	public Account(Integer number, String holder, Double balance, Double withdrawalLimit) {
+		this.number = number;
+		this.holder = holder;
+		this.balance = balance;
+		this.withdrawalLimit = withdrawalLimit;
 	}
 
-	public int getAccountNumber() {
-		return accountNumber;
+	public Integer getNumber() {
+		return number;
 	}
 
-	public String getName() {
-		return name;
+	public void setNumber(Integer number) {
+		this.number = number;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getHolder() {
+		return holder;
 	}
 
-	public double getBalance() {
+	public void setHolder(String holder) {
+		this.holder = holder;
+	}
+
+	public Double getBalance() {
 		return balance;
 	}
 
-	public void withdraw(double value) {
-		this.balance -= (value + 5);
+	public Double getWithdrawalLimit() {
+		return withdrawalLimit;
 	}
-	
-	public void deposit(double balance) {
-		this.balance += balance;
+
+	public void setWithdrawalLimit(Double withdrawalLimit) {
+		this.withdrawalLimit = withdrawalLimit;
 	}
-	
-	public String toString() {
-		return "Account: " + getAccountNumber()
-				+ ", Holder: " + getName()
-				+ ", Balance: $: " + String.format("%.2f", getBalance());
+
+	public void deposit(double deposit) {
+		balance += deposit;
+
+	}
+
+	public void withdraw(double withdraw) {
+		validateWithdraw(withdraw);
+		balance -= withdraw;
+	}
+
+	public void validateWithdraw(double amount) {
+		if (amount > getWithdrawalLimit()) {
+			throw new BusinessException("Withdraw error: The amount exceeds withdraw limit");
+		}
+		if (amount > getBalance()) {
+			throw new BusinessException("Withdraw error: Not enough balance");
+		}
 	}
 
 }
