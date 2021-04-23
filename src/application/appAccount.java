@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Account;
-import entities.exceptions.BusinessException;
+import exceptions.BusinessException;
 
 public class appAccount {
 

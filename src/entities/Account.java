@@ -1,6 +1,6 @@
 package entities;
 
-import entities.exceptions.BusinessException;
+import exceptions.BusinessException;
 
 public class Account {
 
