@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product;
+import entities.ProductOne;
 
 public class Program {
 
@@ -19,7 +19,7 @@ public class Program {
 		System.out.print("quantity in stock: ");
 		int quantity = e.nextInt();
 
-		Product product = new Product(name, price, quantity);
+		ProductOne product = new ProductOne(name, price, quantity);
 		
 		System.out.println("Product data: " + product);
 

@@ -1,58 +1,60 @@
 package entities;
 
-public class Product {
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Serializable;
+
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	private String name;
-	private double price;
-	private int quantity;
+	private Double price;
+	private Integer quantity;
 
 	public Product() {
+
 	}
 
-	public Product(String name, double price, int quantity) {
+	public Product(String name, Double price, Integer quantity) {
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
 	}
 
-	public Product(String name, double price) {
-		this.name = name;
-		this.price = price;
-	}
-	
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public double getPrice() {
+
+	public Double getPrice() {
 		return price;
 	}
-	
-	public void setPrice(double price) {
+
+	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
-	public int getQuantity() {
+
+	public Integer getQuantity() {
 		return quantity;
 	}
 
-	public double TotalValueInStock() {
-		return quantity * price;
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
-	public void addProducts(int quantity) {
-		this.quantity += quantity;
+	public double updateValue() {
+		return getPrice() * getQuantity();
 	}
 
-	public void removeProduct(int quantity) {
-		this.quantity -= quantity;
-	}
-
+	@Override
 	public String toString() {
-		return this.name + ", " + "$ " + String.format("%.2f", this.price) + ", " + this.quantity + " units, "
-				+ "Total $: " + String.format("%.2f", TotalValueInStock());
+		return "Product [name=" + name + ", price=" + price + ", quantity=" + quantity + "]";
 	}
+
 }
