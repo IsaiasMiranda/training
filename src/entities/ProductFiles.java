@@ -1,12 +1,8 @@
 package entities;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class ProductFiles implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -14,11 +10,11 @@ public class Product implements Serializable {
 	private Double price;
 	private Integer quantity;
 
-	public Product() {
+	public ProductFiles() {
 
 	}
 
-	public Product(String name, Double price, Integer quantity) {
+	public ProductFiles(String name, Double price, Integer quantity) {
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;

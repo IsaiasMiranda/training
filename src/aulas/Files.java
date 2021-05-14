@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product;
+import entities.ProductFiles;
 
 public class Files {
 
@@ -23,7 +23,7 @@ public class Files {
 		String summaryCsv = "//home//isaias//Downloads//out//summary.csv";
 		Scanner sc = null;
 
-		List<Product> listProduct = new ArrayList<Product>();
+		List<ProductFiles> listProduct = new ArrayList<ProductFiles>();
 
 		if (!directory.exists()) {
 			directory.mkdir();
@@ -41,7 +41,7 @@ public class Files {
 				Double price = Double.parseDouble(product[1]);
 				Integer quantity = Integer.parseInt(product[2]);
 
-				Product p = new Product(name, price, quantity);
+				ProductFiles p = new ProductFiles(name, price, quantity);
 
 				listProduct.add(p);
 
@@ -52,7 +52,7 @@ public class Files {
 			try (BufferedWriter bw = new BufferedWriter(new FileWriter(summaryCsv))) {
 				bw.write("Product , Total");
 				bw.newLine();
-				for (Product listSummary : listProduct) {
+				for (ProductFiles listSummary : listProduct) {
 					bw.write(listSummary.getName() + " , ");
 					bw.write(String.valueOf(listSummary.updateValue()));
 					bw.newLine();
