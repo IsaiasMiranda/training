@@ -1,6 +1,8 @@
-package entities;
+package util;
 
 import java.util.function.Consumer;
+
+import entities.ProductConsumer;
 
 public class UpdatePrice implements Consumer<ProductConsumer> {
 
