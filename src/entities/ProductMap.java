@@ -5,6 +5,10 @@ public class ProductMap {
 	private String name;
 	private Double price;
 
+	public ProductMap() {
+
+	}
+
 	public ProductMap(String name, Double price) {
 		this.name = name;
 		this.price = price;
